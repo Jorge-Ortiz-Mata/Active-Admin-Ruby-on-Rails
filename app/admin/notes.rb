@@ -31,6 +31,8 @@ ActiveAdmin.register Note do
       raw note.body.truncate_words(3)
     end
     column :subject
+    column :created_at
+    column :updated_at
   end
 
   # See permitted parameters documentation:
