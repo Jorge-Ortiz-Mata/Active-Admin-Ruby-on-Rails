@@ -7,7 +7,7 @@ ActiveAdmin.register Subject do
     subject.notes.each do |note|
       div do
         h1 note.title
-        h4 link_to "[#{note.id}]: You created this note on #{note.created_at.strftime('%a %b %e, %Y at %I%M %p')}", admin_note_path(note)
+        h4 link_to "[#{note.id}]: You created this note on #{note.created_at.strftime('%a %b %e, %Y at %I:%M %p')}", admin_note_path(note)
       end
     end
   end
