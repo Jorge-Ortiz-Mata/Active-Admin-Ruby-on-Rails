@@ -19,6 +19,20 @@ ActiveAdmin.register Note do
     end
   end
 
+  index do
+    selectable_column
+    column 'Note ID' do |note|
+      note.id
+    end
+    column 'Note Title' do |note|
+      note.id
+    end
+    column 'Note content' do |note|
+      raw note.body.truncate_words(3)
+    end
+    column :subject
+  end
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
