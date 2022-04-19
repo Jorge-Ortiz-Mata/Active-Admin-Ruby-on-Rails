@@ -6,7 +6,16 @@ ActiveAdmin.register Note do
     f.inputs 'Note' do
       f.input :subject
       f.input :title
-      f.input :body
+      f.input :body, as: :quill_editor
+    end
+    f.actions
+  end
+
+  show do
+    h2 note.title
+    div note.subject.name
+    h4(class: 'note-body') do
+      raw note.body
     end
   end
 
